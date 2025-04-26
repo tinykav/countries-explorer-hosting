@@ -22,7 +22,7 @@ A modern and responsive React application that allows users to explore countries
 1. Clone the repository:
 
 ```bash
-git clone <https://github.com/SE1020-IT2070-OOP-DSA-25/af-2-tinykav>
+git clone https://github.com/SE1020-IT2070-OOP-DSA-25/af-2-tinykav
 cd frontend
 ```
 
