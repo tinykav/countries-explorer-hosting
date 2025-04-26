@@ -72,7 +72,7 @@ npm run test
 ## 🌐 Hosting
 
 This project is hosted on **Vercel**:  
-🔗 [Live Demo Link](<your deployed Vercel link>)
+🔗 [Live Demo Link](https://countries-explorer-hosting.vercel.app/)
 
 ---
 
