@@ -1,0 +1,63 @@
+[
+  {
+    "name": {
+      "common": "Sri Lanka"
+    },
+    "capital": ["Sri Jayawardenepura Kotte"],
+    "region": "Asia",
+    "population": 21803000,
+    "flags": {
+      "png": "https://flagcdn.com/w320/lk.png"
+    },
+    "cca3": "LKA",
+    "languages": {
+      "sin": "Sinhala",
+      "tam": "Tamil"
+    }
+  },
+  {
+    "name": {
+      "common": "United States"
+    },
+    "capital": ["Washington, D.C."],
+    "region": "Americas",
+    "population": 331000000,
+    "flags": {
+      "png": "https://flagcdn.com/w320/us.png"
+    },
+    "cca3": "USA",
+    "languages": {
+      "eng": "English"
+    }
+  },
+  {
+    "name": {
+      "common": "Germany"
+    },
+    "capital": ["Berlin"],
+    "region": "Europe",
+    "population": 83200000,
+    "flags": {
+      "png": "https://flagcdn.com/w320/de.png"
+    },
+    "cca3": "DEU",
+    "languages": {
+      "deu": "German"
+    }
+  },
+  {
+    "name": {
+      "common": "Japan"
+    },
+    "capital": ["Tokyo"],
+    "region": "Asia",
+    "population": 125800000,
+    "flags": {
+      "png": "https://flagcdn.com/w320/jp.png"
+    },
+    "cca3": "JPN",
+    "languages": {
+      "jpn": "Japanese"
+    }
+  }
+]
