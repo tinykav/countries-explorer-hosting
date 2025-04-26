@@ -1,12 +1,96 @@
-# React + Vite
+# 🌎 Countries Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive React application that allows users to explore countries using the [REST Countries API](https://restcountries.com/).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📚 Features
 
-## Expanding the ESLint configuration
+- View country details (Name, Capital, Region, Population, Flag, Languages)
+- Search countries dynamically by name
+- Filter countries by region (Asia, Europe, Americas, etc.)
+- Click a country to view detailed information
+- Fully responsive UI using TailwindCSS
+- Unit and Integration tests with Vitest and React Testing Library
+- Local JSON backup for API outage handling
+- Hosted live for easy access
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the repository:
+
+```bash
+git clone <your GitHub repository link>
+cd frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+4. Run unit and integration tests:
+
+```bash
+npm run test
+```
+
+---
+
+## 🛠 Technologies Used
+
+- ReactJS (Functional Components + Hooks)
+- Vite
+- TailwindCSS
+- Axios
+- React Router DOM
+- Vitest (Testing)
+- @testing-library/react
+
+---
+
+## 🧪 Testing
+
+- `CountryCard`, `SearchFilter`, and `Home` components are tested.
+- Tests can be run using:
+
+```bash
+npm run test
+```
+
+---
+
+## 🌐 Hosting
+
+This project is hosted on **Vercel**:  
+🔗 [Live Demo Link](<your deployed Vercel link>)
+
+---
+
+## 📦 API Endpoints Used
+
+- `/all` — Fetch all countries
+- `/name/{name}` — Search by name
+- `/region/{region}` — Filter by region
+- `/alpha/{code}` — Fetch full details by country code
+
+---
+
+## 📝 Challenges Faced and Solutions
+
+| Challenge                              | Solution                                                    |
+| :------------------------------------- | :---------------------------------------------------------- |
+| REST Countries API was down sometimes  | Implemented local backup JSON to fetch countries offline    |
+| Vitest and Testing Library integration | Configured vite.config.js properly with globals and jsdom   |
+| Search and Filter dynamic updates      | Used local state and API functions to dynamically update UI |
+
+---
