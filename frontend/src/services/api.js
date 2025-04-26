@@ -1,4 +1,4 @@
-// ✅ CURRENTLY USING LOCAL JSON BACKUP
+// CURRENTLY USING LOCAL JSON BACKUP
 import countriesData from "../data/countries.json";
 
 // Using local JSON temporarily
@@ -41,7 +41,7 @@ export const getCountryByCode = (code) => {
   });
 };
 
-// 🚀 IF REAL API IS WORKING, UNCOMMENT BELOW CODE:
+// IF REAL API IS WORKING, UNCOMMENT BELOW CODE:
 /*
 
 import axios from "axios";
