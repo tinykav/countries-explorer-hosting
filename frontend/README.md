@@ -8,8 +8,11 @@ A modern and responsive React application that allows users to explore countries
 
 - View country details (Name, Capital, Region, Population, Flag, Languages)
 - Search countries dynamically by name
-- Filter countries by region (Asia, Europe, Americas, etc.)
-- Click a country to view detailed information
+- Filter countries by **region** (Asia, Europe, Americas, etc.)
+- Filter countries by **language** (English, French, Arabic, etc.)
+- Add and view favorite countries (Favorites Page)
+- Protected routes (Favorites page requires login)
+- Simple **Login/Logout** system using session state
 - Fully responsive UI using TailwindCSS
 - Unit and Integration tests with Vitest and React Testing Library
 - Local JSON backup for API outage handling
@@ -54,13 +57,14 @@ npm run test
 - Axios
 - React Router DOM
 - Vitest (Testing)
-- @testing-library/react
+- @testing-library/
+- Simple custom Authentication Context
 
 ---
 
 ## 🧪 Testing
 
-- `CountryCard`, `SearchFilter`, and `Home` components are tested.
+- `CountryCard`, `SearchFilter`, `Favorites`, `Login` and `Home` components are tested.
 - Tests can be run using:
 
 ```bash
@@ -85,6 +89,15 @@ This project is hosted on **Vercel**:
 
 ---
 
+## 🔒 Authentication
+
+- A simple login system is implemented.
+- Users must log in to access the Favorites page.
+- Session state is stored in localStorage to preserve login between page reloads.
+- No sensitive data is sent externally — purely local/session-based login.
+
+---
+
 ## 📝 Challenges Faced and Solutions
 
 | Challenge                              | Solution                                                    |
@@ -92,5 +105,7 @@ This project is hosted on **Vercel**:
 | REST Countries API was down sometimes  | Implemented local backup JSON to fetch countries offline    |
 | Vitest and Testing Library integration | Configured vite.config.js properly with globals and jsdom   |
 | Search and Filter dynamic updates      | Used local state and API functions to dynamically update UI |
+| Login Session persistence              | Used simple localStorage and AuthContext for session        |
+| Testing Protected Routes               | Used mocked useNavigate in tests for Favorites redirection  |
 
 ---
