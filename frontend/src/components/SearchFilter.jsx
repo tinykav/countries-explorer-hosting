@@ -1,18 +1,17 @@
-import { useState } from "react";
-
-export default function SearchFilter({ onSearch, onFilter }) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [region, setRegion] = useState("");
-
+export default function SearchFilter({
+  onSearch,
+  onFilter,
+  onClear,
+  searchTerm,
+  region
+}) {
   const handleSearchChange = (e) => {
     const value = e.target.value;
-    setSearchTerm(value);
     onSearch(value);
   };
 
   const handleRegionChange = (e) => {
     const value = e.target.value;
-    setRegion(value);
     onFilter(value);
   };
 
@@ -37,6 +36,12 @@ export default function SearchFilter({ onSearch, onFilter }) {
         <option value="Africa">Africa</option>
         <option value="Oceania">Oceania</option>
       </select>
+      <button
+        onClick={onClear}
+        className="mt-2 md:mt-0 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition"
+      >
+        Clear Filters
+      </button>
     </div>
   );
 }
