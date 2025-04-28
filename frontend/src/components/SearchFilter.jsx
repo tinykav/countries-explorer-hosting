@@ -1,12 +1,21 @@
-import { FaSearch, FaGlobe, FaTimes, FaHeart } from "react-icons/fa"; // ✅ Add FaHeart
+import {
+  FaSearch,
+  FaGlobe,
+  FaTimes,
+  FaHeart,
+  FaLanguage
+} from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 export default function SearchFilter({
   onSearch,
-  onFilter,
+  onFilterRegion,
+  onFilterLanguage,
   onClear,
   searchTerm,
-  region
+  region,
+  language
 }) {
   const handleSearchChange = (e) => {
     const value = e.target.value;
@@ -15,7 +24,7 @@ export default function SearchFilter({
 
   const handleRegionChange = (e) => {
     const value = e.target.value;
-    onFilter(value);
+    onFilterRegion(value);
   };
 
   return (
@@ -46,6 +55,22 @@ export default function SearchFilter({
           <option value="Europe">Europe</option>
           <option value="Africa">Africa</option>
           <option value="Oceania">Oceania</option>
+        </select>
+      </div>
+      {/* Language Select */}
+      <div className="relative w-full md:w-1/4">
+        <FaLanguage className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <select
+          value={language}
+          onChange={(e) => onFilterLanguage(e.target.value)}
+          className="border border-gray-300 rounded-lg pl-12 pr-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-green-400 appearance-none"
+        >
+          <option value="">All Languages</option>
+          <option value="English">English</option>
+          <option value="French">French</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Chinese">Chinese</option>
         </select>
       </div>
 

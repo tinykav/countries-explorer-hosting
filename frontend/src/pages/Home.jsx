@@ -8,6 +8,8 @@ import CountryCard from "../components/CountryCard";
 import SearchFilter from "../components/SearchFilter";
 
 export default function Home() {
+  const [language, setLanguage] = useState("");
+
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState(
     localStorage.getItem("searchTerm") || ""
@@ -88,7 +90,11 @@ export default function Home() {
     localStorage.removeItem("region");
     setSearchTerm("");
     setRegion("");
+    setLanguage("");
     fetchCountries();
+  };
+  const handleLanguageFilter = (selectedLanguage) => {
+    setLanguage(selectedLanguage);
   };
 
   if (loading) {
@@ -99,10 +105,12 @@ export default function Home() {
     <div className="bg-gray-100 min-h-screen">
       <SearchFilter
         onSearch={handleSearch}
-        onFilter={handleFilter}
+        onFilterRegion={handleFilter}
+        onFilterLanguage={handleLanguageFilter}
         onClear={handleClearFilters}
         searchTerm={searchTerm}
         region={region}
+        language={language}
       />
 
       {countries.length === 0 ? (
@@ -111,9 +119,17 @@ export default function Home() {
         </div>
       ) : (
         <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {countries.map((country) => (
-            <CountryCard key={country.cca3} country={country} />
-          ))}
+          {countries
+            .filter((country) => {
+              const matchesLanguage = language
+                ? country.languages &&
+                  Object.values(country.languages).includes(language)
+                : true;
+              return matchesLanguage;
+            })
+            .map((country) => (
+              <CountryCard key={country.cca3} country={country} />
+            ))}
         </div>
       )}
     </div>
