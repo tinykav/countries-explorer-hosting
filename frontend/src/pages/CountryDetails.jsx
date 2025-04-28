@@ -14,7 +14,7 @@ export default function CountryDetails() {
   const fetchCountry = async () => {
     try {
       const response = await getCountryByCode(code);
-      setCountry(response.data);
+      setCountry(response.data[0]);
     } catch (error) {
       console.error("Error fetching country details:", error);
     } finally {

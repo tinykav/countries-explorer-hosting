@@ -36,6 +36,7 @@ export default function Home() {
       setCountries(response.data);
     } catch (error) {
       console.error("Error searching countries:", error);
+      setCountries([]);
     }
   };
 
@@ -59,11 +60,20 @@ export default function Home() {
   return (
     <div>
       <SearchFilter onSearch={handleSearch} onFilter={handleFilter} />
-      <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {countries.map((country) => (
-          <CountryCard key={country.cca3} country={country} />
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="text-center p-10 text-xl">Loading countries...</div>
+      ) : countries.length === 0 ? (
+        <div className="text-center p-10 text-xl text-gray-600">
+          No countries found.
+        </div>
+      ) : (
+        <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {countries.map((country) => (
+            <CountryCard key={country.cca3} country={country} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
