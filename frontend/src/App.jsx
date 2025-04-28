@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import CountryDetails from "./pages/CountryDetails";
 import Favorites from "./pages/Favorites";
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/country/:code" element={<CountryDetails />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </>

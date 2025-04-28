@@ -10,10 +10,12 @@ test("calls onSearch and onFilter when typing and selecting", () => {
     <BrowserRouter>
       <SearchFilter
         onSearch={mockOnSearch}
-        onFilter={mockOnFilter}
+        onFilterRegion={mockOnFilter}
+        onFilterLanguage={() => {}}
         onClear={() => {}}
         searchTerm=""
         region=""
+        language=""
       />
     </BrowserRouter>
   );
@@ -22,7 +24,7 @@ test("calls onSearch and onFilter when typing and selecting", () => {
   fireEvent.change(input, { target: { value: "Sri Lanka" } });
   expect(mockOnSearch).toHaveBeenCalledWith("Sri Lanka");
 
-  const select = screen.getByRole("combobox");
-  fireEvent.change(select, { target: { value: "Asia" } });
+  const selects = screen.getAllByRole("combobox");
+  fireEvent.change(selects[0], { target: { value: "Asia" } });
   expect(mockOnFilter).toHaveBeenCalledWith("Asia");
 });
