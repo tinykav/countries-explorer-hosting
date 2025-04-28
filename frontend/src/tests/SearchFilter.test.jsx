@@ -1,11 +1,22 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import SearchFilter from "../components/SearchFilter";
 
 test("calls onSearch and onFilter when typing and selecting", () => {
   const mockOnSearch = vi.fn();
   const mockOnFilter = vi.fn();
 
-  render(<SearchFilter onSearch={mockOnSearch} onFilter={mockOnFilter} />);
+  render(
+    <BrowserRouter>
+      <SearchFilter
+        onSearch={mockOnSearch}
+        onFilter={mockOnFilter}
+        onClear={() => {}}
+        searchTerm=""
+        region=""
+      />
+    </BrowserRouter>
+  );
 
   const input = screen.getByPlaceholderText(/search countries/i);
   fireEvent.change(input, { target: { value: "Sri Lanka" } });

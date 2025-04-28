@@ -26,15 +26,12 @@ export default function Home() {
   }, []);
 
   const fetchCountries = async () => {
-    console.log("Fetching countries..."); // 🚀 Debug log
     try {
       const response = await getAllCountries();
-      console.log("Countries fetched:", response.data); // 🚀 Debug log
       setCountries(response.data);
     } catch (error) {
-      console.error("Error fetching countries:", error); // 🚀 Debug log
+      console.error("Error fetching countries:", error);
     } finally {
-      console.log("Setting loading to false"); // 🚀 Debug log
       setLoading(false);
     }
   };
@@ -59,7 +56,7 @@ export default function Home() {
       console.error("Error searching countries:", error);
       setCountries([]);
     } finally {
-      setLoading(false); // ✅ Add this line
+      setLoading(false);
     }
   };
 
@@ -82,7 +79,7 @@ export default function Home() {
     } catch (error) {
       console.error("Error filtering countries:", error);
     } finally {
-      setLoading(false); // ✅ Add this line
+      setLoading(false);
     }
   };
 
@@ -99,7 +96,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <SearchFilter
         onSearch={handleSearch}
         onFilter={handleFilter}
@@ -113,7 +110,7 @@ export default function Home() {
           No countries found.
         </div>
       ) : (
-        <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {countries.map((country) => (
             <CountryCard key={country.cca3} country={country} />
           ))}

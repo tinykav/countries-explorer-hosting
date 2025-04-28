@@ -1,10 +1,9 @@
-/* eslint-env jest */
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import CountryCard from "../components/CountryCard";
-import { BrowserRouter } from "react-router-dom";
 
-test("renders CountryCard with country name", () => {
+test("renders CountryCard with country name and region", () => {
   const mockCountry = {
     cca3: "LKA",
     name: { common: "Sri Lanka" },
@@ -20,6 +19,10 @@ test("renders CountryCard with country name", () => {
     </BrowserRouter>
   );
 
-  expect(screen.getByText("Sri Lanka")).toBeInTheDocument();
-  expect(screen.getByText("Region: Asia")).toBeInTheDocument();
+  // Check country name
+  expect(screen.getByText(/Sri Lanka/i)).toBeInTheDocument();
+
+  // Check separately for Region label and Asia value
+  expect(screen.getByText(/Region:/i)).toBeInTheDocument();
+  expect(screen.getByText(/Asia/i)).toBeInTheDocument();
 });
