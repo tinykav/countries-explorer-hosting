@@ -1,10 +1,10 @@
-# 🌎 Countries Explorer
+# Countries Explorer
 
 A modern and responsive React application that allows users to explore countries using the [REST Countries API](https://restcountries.com/).
 
 ---
 
-## 📚 Features
+## Features
 
 - View country details (Name, Capital, Region, Population, Flag, Languages)
 - Search countries dynamically by name
@@ -20,7 +20,7 @@ A modern and responsive React application that allows users to explore countries
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 1. Clone the repository:
 
@@ -49,7 +49,7 @@ npm run test
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - ReactJS (Functional Components + Hooks)
 - Vite
@@ -62,7 +62,7 @@ npm run test
 
 ---
 
-## 🧪 Testing
+## Testing
 
 - `CountryCard`, `SearchFilter`, `Favorites`, `Login` and `Home` components are tested.
 - Tests can be run using:
@@ -73,14 +73,14 @@ npm run test
 
 ---
 
-## 🌐 Hosting
+## Hosting
 
 This project is hosted on **Vercel**:  
 🔗 [Live Demo Link](https://countries-explorer-hosting.vercel.app/)
 
 ---
 
-## 📦 API Endpoints Used
+## API Endpoints Used
 
 - `/all` — Fetch all countries
 - `/name/{name}` — Search by name
@@ -89,7 +89,7 @@ This project is hosted on **Vercel**:
 
 ---
 
-## 🔒 Authentication
+## Authentication
 
 - A simple login system is implemented.
 - Users must log in to access the Favorites page.
@@ -98,7 +98,7 @@ This project is hosted on **Vercel**:
 
 ---
 
-## 📝 Challenges Faced and Solutions
+## Challenges Faced and Solutions
 
 | Challenge                              | Solution                                                    |
 | :------------------------------------- | :---------------------------------------------------------- |
